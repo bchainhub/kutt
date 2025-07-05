@@ -32,7 +32,7 @@ async function homepage(req, res) {
 
   res.render("homepage", {
     title: "Free modern URL shortener",
-    domains: allDomains.map(utils.sanitize.domain),
+    domains: allDomains.map(utils.sanitize.domain).sort((a, b) => a.address.localeCompare(b.address)),
     default_domain: env.DEFAULT_DOMAIN,
     show_advanced: req.query.show_advanced === "true"
   });

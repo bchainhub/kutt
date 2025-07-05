@@ -1,21 +1,12 @@
 # Kutt
 
-[![Kutt.it](https://raw.githubusercontent.com/thedevs-network/kutt/9d1c873897c3f5b9a1bd0c74dc5d23f2ed01f2ec/static/images/logo-github.png)](https://kutt.it)
-
 **Kutt** is a modern URL shortener with support for custom domains. Create and edit links, view statistics, manage users, and more.
-
-[https://kutt.it](https://kutt.it)
-[![docker-build-release](https://github.com/thedevs-network/kutt/actions/workflows/docker-build-release.yaml/badge.svg)](https://github.com/thedevs-network/kutt/actions/workflows/docker-build-release.yaml)
-[![Uptime Status](https://uptime.betterstack.com/status-badges/v2/monitor/1ogaa.svg)](https://status.kutt.it)
-[![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/thedevs-network/kutt/#contributing)
-[![GitHub license](https://img.shields.io/github/license/thedevs-network/kutt.svg)](https://github.com/thedevs-network/kutt/blob/develop/LICENSE)
 
 ## Table of contents
 
 - [Kutt](#kutt)
   - [Table of contents](#table-of-contents)
   - [Key features](#key-features)
-  - [Donations and sponsors](#donations-and-sponsors)
   - [Setup](#setup)
   - [Docker](#docker)
   - [API](#api)
@@ -46,19 +37,13 @@
 - Customizability and themes
 - RESTful API
 
-## Donations and sponsors
-
-Support the development of Kutt by making a donation or becoming an sponsor.
-
-[Donate or sponsor →](https://btcpay.kutt.it/apps/L9Gc7PrnLykeRHkhsH2jHivBeEh/crowdfund)
-
 ## Setup
 
 The only prerequisite is [Node.js](https://nodejs.org/) (version 20 or above). The default database is SQLite. You can optionally install Postgres or MySQL/MariaDB for the database or Redis for the cache.
 
 When you first start the app, you're prompted to create an admin account.
 
-1. Clone this repository or [download the latest zip](https://github.com/thedevs-network/kutt/releases)
+1. Clone this repository or [download the latest zip](https://github.com/bchainhub/kutt/releases)
 2. Install dependencies: `npm install`
 3. Initialize database: `npm run migrate`
 4. Start the app for development `npm run dev` or production `npm start`
@@ -161,14 +146,14 @@ custom/
 │  ├─ ...
 ```
 
-- **css**: Put your CSS style files here. ([View example →](https://github.com/thedevs-network/kutt-customizations/tree/main/themes/crimson/css))
+- **css**: Put your CSS style files here. ([View example →](https://github.com/bchainhub/kutt-customizations/tree/main/themes/crimson/css))
   - You can put as many style files as you want: `custom1.css`, `custom2.css`, etc.
   - If you name your style file `styles.css`, it will replace Kutt's original `styles.css` file.
   - Each file will be accessible by `<your-site.com>/css/<file>.css`
-- **images**: Put your images here. ([View example →](https://github.com/thedevs-network/kutt-customizations/tree/main/themes/crimson/images))
+- **images**: Put your images here. ([View example →](https://github.com/bchainhub/kutt-customizations/tree/main/themes/crimson/images))
   - Name them just like the files inside the [`/static/images/`](./static/images) folder to replace Kutt's original images.
   - Each image will be accessible by `<your-site.com>/images/<image>.<image-format>`
-- **views**: Custom HTML templates to render. ([View example →](https://github.com/thedevs-network/kutt-customizations/tree/main/themes/crimson/views))
+- **views**: Custom HTML templates to render. ([View example →](https://github.com/bchainhub/kutt-customizations/tree/main/themes/crimson/views))
   - It should follow the same file naming and folder structure as [`/server/views`](./server/views)
   - Although we try to keep the original file names unchanged, be aware that new changes on Kutt might break your custom views.
 
@@ -176,9 +161,9 @@ custom/
 
 This is an example and official theme. Crimson includes custom styles, images, and views.
 
-[Get Crimson theme →](https://github.com/thedevs-network/kutt-customizations/tree/main/themes/crimson)
+[Get Crimson theme →](https://github.com/bchainhub/kutt-customizations/tree/main/themes/crimson)
 
-[View list of themes and customizations →](https://github.com/thedevs-network/kutt-customizations)
+[View list of themes and customizations →](https://github.com/bchainhub/kutt-customizations)
 
 | Homepage | Admin page | Login/signup |
 | -------- | ---------- | ------------ |
@@ -188,7 +173,7 @@ This is an example and official theme. Crimson includes custom styles, images, a
 
 If you're building the image locally, then the `/custom` folder should already be included in your app.
 
-If you're pulling the official image, make sure `/kutt/custom` volume is mounted or you have access to it. [View Docker compose example →](https://github.com/thedevs-network/kutt/blob/main/docker-compose.yml#L7)
+If you're pulling the official image, make sure `/kutt/custom` volume is mounted or you have access to it. [View Docker compose example →](https://github.com/bchainhub/kutt/blob/main/docker-compose.yml#L7)
 
 Then, move your files to that volume. You can do it with this Docker command:
 
@@ -219,8 +204,8 @@ Download Kutt's extension for web browsers via below links.
 
 ## Integrations
 
-- **ShareX** – You can use Kutt as your default URL shortener in [ShareX](https://getsharex.com/). If you host your custom instance of Kutt, refer to [ShareX wiki](https://github.com/thedevs-network/kutt/wiki/ShareX) on how to setup.
-- **Alfred workflow** – Download Kutt's official workflow for [Alfred](https://www.alfredapp.com/) app from [alfred-kutt](https://github.com/thedevs-network/alfred-kutt) repository.
+- **ShareX** – You can use Kutt as your default URL shortener in [ShareX](https://getsharex.com/). If you host your custom instance of Kutt, refer to [ShareX wiki](https://github.com/bchainhub/kutt/wiki/ShareX) on how to setup.
+- **Alfred workflow** – Download Kutt's official workflow for [Alfred](https://www.alfredapp.com/) app from [alfred-kutt](https://github.com/bchainhub/alfred-kutt) repository.
 - **iOS shortcut** – [Kutt shortcut](https://www.icloud.com/shortcuts/a829856aea2c420e97c53437e68b752b) for your apple device which works from the iOS sharing context menu or on standalone mode. A courtesy of [@caneeeeee](https://github.com/caneeeeee).
 
 ### Third-party packages
@@ -244,5 +229,3 @@ Download Kutt's extension for web browsers via below links.
 ## Contributing
 
 Pull requests are welcome. Open a discussion for feedback, requesting features, or discussing ideas.
-
-Special thanks to [Thomas](https://github.com/trgwii) and [Muthu](https://github.com/MKRhere). Logo design by [Muthu](https://github.com/MKRhere).

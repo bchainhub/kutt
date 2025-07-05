@@ -422,9 +422,7 @@ function getAdditionalDomains() {
     return [];
   }
 
-  return env.ADDITIONAL_DOMAINS_ARRAY
-    .filter(domain => domain && domain.trim().length > 0)
-    .sort();
+  return env.ADDITIONAL_DOMAINS_ARRAY;
 }
 
 // Get all available domains (default + additional)
@@ -432,7 +430,7 @@ function getAllAvailableDomains() {
   const domains = [env.DEFAULT_DOMAIN];
 
   if (env.ADDITIONAL_DOMAINS_ARRAY && Array.isArray(env.ADDITIONAL_DOMAINS_ARRAY)) {
-    domains.push(...env.ADDITIONAL_DOMAINS_ARRAY.filter(domain => domain && domain.trim().length > 0));
+    domains.push(...env.ADDITIONAL_DOMAINS_ARRAY);
   }
 
   return domains;
