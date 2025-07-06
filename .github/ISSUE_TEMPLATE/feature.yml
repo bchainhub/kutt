@@ -1,0 +1,43 @@
+name: Feature Request 🔮
+description: Suggest an idea for this project
+labels:
+  - feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest an idea for this project. The developers will consider your suggestion for integration.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Is your feature request related to a problem? Please describe it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution
+      description: Describe the solution you would like.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Describe any alternatives you have considered.
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation
+      description: Describe how this could be implemented, with code examples if possible.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add any additional information or screenshots here.
