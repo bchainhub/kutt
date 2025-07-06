@@ -39,7 +39,12 @@ async function user(req, res, next) {
   res.locals.user = user;
   if (user) {
     const userDomains = await query.domain.get({ user_id: user.id });
-    res.locals.domains = userDomains.map(d => ({ domain: d.address, custom: true })).sort((a, b) => a.domain.localeCompare(b.domain));
+    res.locals.domains = userDomains.map(d => ({
+      ...d,
+      domain: d.address,
+      id: d.uuid,
+      custom: true
+    })).sort((a, b) => a.domain.localeCompare(b.domain));
   } else {
     res.locals.domains = [];
   }
