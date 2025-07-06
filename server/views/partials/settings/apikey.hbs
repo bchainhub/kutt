@@ -10,7 +10,7 @@
   </p>
   <div id="apikey">
     {{#if user.apikey}}
-      <div class="clipboard small">
+      <div class="clipboard small" style="display: flex; align-items: center; gap: 0.5rem;">
         <button
           type="button"
           aria-label="Copy"
@@ -21,12 +21,37 @@
         </button>
         {{> icons/check}}
       </div>
-      <p
-        hx-on:click="handleShortURLCopyLink(this);"
-        data-url="{{user.apikey}}"
-      >
-        {{user.apikey}}
-      </p>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span id="apikey-value" style="font-family: monospace; letter-spacing: 0.1em;">
+          <span id="apikey-stars">••••••••••••••••••</span>
+          <span id="apikey-plain" style="user-select: all; display: none;">{{user.apikey}}</span>
+        </span>
+        <button type="button" id="toggle-apikey-visibility" aria-label="Show/Hide API key" class="secondary">
+          <span id="icon-eye">{{> icons/eye}}</span>
+          <span id="toggle-apikey-label">Show</span>
+        </button>
+      </div>
+      <script>
+        (() => {
+          const btn = document.getElementById('toggle-apikey-visibility');
+          if (!btn) return;
+          btn.addEventListener('click', function() {
+            const stars = document.getElementById('apikey-stars');
+            const plain = document.getElementById('apikey-plain');
+            const iconEye = document.getElementById('icon-eye');
+            const label = document.getElementById('toggle-apikey-label');
+            if (stars.style.display === 'none') {
+              stars.style.display = '';
+              plain.style.display = 'none';
+              label.textContent = 'Show';
+            } else {
+              stars.style.display = 'none';
+              plain.style.display = '';
+              label.textContent = 'Hide';
+            }
+          });
+        })();
+      </script>
     {{/if}}
     {{#if error}}
       <p class="error">{{error}}</p>
