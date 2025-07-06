@@ -16,8 +16,6 @@
       - [Example theme: Crimson](#example-theme-crimson)
       - [Usage with Docker](#usage-with-docker)
   - [Browser extensions](#browser-extensions)
-  - [Videos](#videos)
-    - [Official videos](#official-videos)
   - [Integrations](#integrations)
     - [Third-party packages](#third-party-packages)
   - [Contributing](#contributing)
@@ -66,7 +64,7 @@ Various docker-compose configurations are available. Use `docker compose -f <fil
 - [`docker-compose.mariadb.yml`](./docker-compose.mariadb.yml): Starts Kutt with MariaDB and Redis.
   - Required environment variables: `REDIS_ENABLED`, `DB_PASSWORD`, `DB_NAME`, `DB_USER`, `DB_PORT`
 
-Official Kutt Docker image is available on [Docker Hub](https://hub.docker.com/r/kutt/kutt).
+Official Kutt Docker image is available on [GitHub Container Registry](https://github.com/bchainhub/kutt/pkgs/container/kutt).
 
 ## API
 
@@ -195,12 +193,6 @@ Download Kutt's extension for web browsers via below links.
 
 - [Chrome](https://chrome.google.com/webstore/detail/kutt/pklakpjfiegjacoppcodencchehlfnpd)
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/kutt/)
-
-## Videos
-
-### Official videos
-
-- [Next.js to htmx – A Real World Example](https://www.youtube.com/watch?v=8RL4NvYZDT4)
 
 ## Integrations
 

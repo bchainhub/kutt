@@ -14,7 +14,13 @@ async function add(req, res) {
   });
 
   if (req.isHTML) {
-    const domains = (await query.domain.get({ user_id: req.user.id })).map(sanitize.domain);
+    const userDomains = await query.domain.get({ user_id: req.user.id });
+    const domains = userDomains.map(d => ({
+      ...d,
+      domain: d.address,
+      id: d.uuid,
+      custom: true
+    })).sort((a, b) => a.domain.localeCompare(b.domain));
     res.setHeader("HX-Reswap", "none");
     res.render("partials/settings/domain/table", {
       domains
