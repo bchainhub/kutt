@@ -1,0 +1,63 @@
+name: Report Bug 🪲
+description: Create a bug report
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide as many details as possible to help us evaluate and resolve your bug report faster.
+
+  - type: markdown
+    attributes:
+      value: |
+        Software-specific details.
+
+  - type: input
+    id: os
+    attributes:
+      label: OS and version
+      description: Name and version of the OS used.
+      placeholder: OS
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug
+    attributes:
+      label: Bug
+      description: Describe the bug.
+      placeholder: Bug description
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the steps to reproduce the behavior.
+      placeholder: 1. Step 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe the result you expected.
+      placeholder: Expected result
+    validations:
+      required: true
+
+  - type: input
+    id: hash
+    attributes:
+      label: Commit hash
+      description: Commit hash, if known.
+      placeholder: baf2aab0128f07262b564214ec70fc07befc6bb3
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add any additional information or screenshots here.

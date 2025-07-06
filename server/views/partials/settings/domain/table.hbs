@@ -1,7 +1,7 @@
 <table id="domains-table" hx-swap-oob="true">
   <thead>
     <tr>
-      <th class="domain">Domain</th>
+      <th class="domain">Domain ★</th>
       <th class="homepage">Homepage</th>
       <th class="actions"></th>
     </tr>
@@ -11,7 +11,7 @@
       {{#each domains}}
         <tr>
           <td class="domain">
-            {{address}}
+            {{domain}}{{#if custom}}{{/if}}
           </td>
           <td class="homepage">
             {{homepage}}

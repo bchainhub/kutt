@@ -14,3 +14,7 @@ docs/api/static
 **/.DS_Store
 db/*
 !db/.gitkeep
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb

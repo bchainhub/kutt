@@ -14,25 +14,17 @@ async function homepage(req, res) {
     return;
   }
 
-  const domains = req.user ? await query.domain.get({ user_id: req.user.id }) : [];
+  const userDomains = req.user ? await query.domain.get({ user_id: req.user.id }) : [];
+  const userDomainObjs = userDomains.map(d => ({ domain: d.address, custom: true }));
 
-  // Add additional domains from environment
   const additionalDomains = utils.getAdditionalDomains();
-  const allDomains = [
-    ...domains,
-    ...additionalDomains.map(address => ({
-      address,
-      id: `env-${address}`,
-      homepage: `https://${address}`,
-      banned: false,
-      created_at: new Date(),
-      updated_at: new Date()
-    }))
-  ];
+  const envDomainObjs = additionalDomains.map(address => ({ domain: address }));
+
+  const allDomains = [...userDomainObjs, ...envDomainObjs].sort((a, b) => a.domain.localeCompare(b.domain));
 
   res.render("homepage", {
     title: "Free modern URL shortener",
-    domains: allDomains.map(utils.sanitize.domain),
+    domains: allDomains,
     default_domain: env.DEFAULT_DOMAIN,
     show_advanced: req.query.show_advanced === "true"
   });

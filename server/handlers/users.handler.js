@@ -11,7 +11,7 @@ async function get(req, res) {
   const data = {
     apikey: req.user.apikey,
     email: req.user.email,
-    domains: domains.map(utils.sanitize.domain)
+    domains: domains.map(d => ({ domain: d.address, id: d.uuid, homepage: d.homepage, custom: true })).sort((a, b) => a.domain.localeCompare(b.domain))
   };
 
   return res.status(200).send(data);

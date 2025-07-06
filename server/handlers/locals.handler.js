@@ -37,7 +37,17 @@ function config(req, res, next) {
 async function user(req, res, next) {
   const user = req.user;
   res.locals.user = user;
-  res.locals.domains = user && (await query.domain.get({ user_id: user.id })).map(utils.sanitize.domain);
+  if (user) {
+    const userDomains = await query.domain.get({ user_id: user.id });
+    res.locals.domains = userDomains.map(d => ({
+      ...d,
+      domain: d.address,
+      id: d.uuid,
+      custom: true
+    })).sort((a, b) => a.domain.localeCompare(b.domain));
+  } else {
+    res.locals.domains = [];
+  }
   next();
 }
 
