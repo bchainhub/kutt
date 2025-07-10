@@ -67,6 +67,7 @@ const spec = {
   CONTACT_EMAIL: str({ default: "" }),
   GIT_URL: str({ default: "https://github.com/bchainhub/kutt" }),
   NODE_APP_INSTANCE: num({ default: 0 }),
+  META_FINTAG: str({ default: "" }),
 };
 
 for (const key in spec) {
