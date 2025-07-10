@@ -33,6 +33,7 @@ function config(req, res, next) {
   res.locals.custom_styles = utils.getCustomCSSFileNames();
   res.locals.meta_fintag_type = (env.META_FINTAG && env.META_FINTAG.split(",").length > 0) ? env.META_FINTAG.split(",")[0] : "";
   res.locals.meta_fintag_address = (env.META_FINTAG && env.META_FINTAG.split(",").length > 0) ? env.META_FINTAG.split(",")[1] : "";
+  res.locals.meta_fintag_fee = env.META_FINTAG_FEE;
   next();
 }
 

@@ -120,6 +120,7 @@ You can use files for each of the variables by appending `_FILE` to the name of 
 | `CONTACT_EMAIL` | The support email address to show on the app | - | `example@yoursite.com` |
 | `GIT_URL` | The URL of the Git repository | - | `https://github.com/bchainhub/kutt` |
 | `META_FINTAG` | The meta tag for financial information divided by comma: type,address (generate from [payto.money](https://payto.money)) | - | `ican:xcb,cb…` |
+| `META_FINTAG_FEE` | The fee for financial information in percentage (required if META_FINTAG is set) | - | `1.00%` |
 
 ## Themes and customizations
 
