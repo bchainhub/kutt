@@ -31,6 +31,8 @@ function config(req, res, next) {
   res.locals.report_email = env.REPORT_EMAIL;
   res.locals.git_url = env.GIT_URL;
   res.locals.custom_styles = utils.getCustomCSSFileNames();
+  res.locals.meta_fintag_type = (env.META_FINTAG && env.META_FINTAG.split(",").length > 0) ? env.META_FINTAG.split(",")[0] : "";
+  res.locals.meta_fintag_address = (env.META_FINTAG && env.META_FINTAG.split(",").length > 0) ? env.META_FINTAG.split(",")[1] : "";
   next();
 }
 
